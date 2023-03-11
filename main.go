@@ -9,8 +9,8 @@ import (
 
 	"go.uber.org/zap"
 
-	"github.com/qredo-external/go-alessandro-resta/app"
-	"github.com/qredo-external/go-alessandro-resta/internal/service"
+	"github.com/alesr/code-assignment/app"
+	"github.com/alesr/code-assignment/internal/service"
 
 	"github.com/go-chi/chi"
 	envars "github.com/netflix/go-env"

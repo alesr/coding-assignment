@@ -1,4 +1,4 @@
-module github.com/qredo-external/go-alessandro-resta
+module github.com/alesr/code-assignment
 
 go 1.20
 

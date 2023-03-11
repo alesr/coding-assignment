@@ -13,8 +13,8 @@ import (
 
 const (
 	jtwClaimDuration time.Duration = time.Hour
-	jwtClaimIssuer   string        = "qredo"
-	jwtClaimAudience string        = "qredo"
+	jwtClaimIssuer   string        = "foo-issuer"
+	jwtClaimAudience string        = "foo-audience"
 	tokenType        string        = "Bearer"
 )
 

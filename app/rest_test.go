@@ -11,8 +11,8 @@ import (
 	"strings"
 	"testing"
 
+	"github.com/alesr/code-assignment/internal/service"
 	"github.com/go-chi/chi"
-	"github.com/qredo-external/go-alessandro-resta/internal/service"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"go.uber.org/zap"

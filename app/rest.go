@@ -10,8 +10,8 @@ import (
 
 	"go.uber.org/zap"
 
+	"github.com/alesr/code-assignment/internal/service"
 	"github.com/go-chi/chi"
-	"github.com/qredo-external/go-alessandro-resta/internal/service"
 )
 
 const bearerPrefix = "Bearer "

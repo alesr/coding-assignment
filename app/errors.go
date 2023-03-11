@@ -4,7 +4,7 @@ import (
 	"errors"
 	"net/http"
 
-	"github.com/qredo-external/go-alessandro-resta/internal/service"
+	"github.com/alesr/code-assignment/internal/service"
 )
 
 type APIError struct {

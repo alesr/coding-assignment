@@ -47,8 +47,8 @@ func TestDefaultService_GenerateToken(t *testing.T) {
 	require.True(t, ok)
 
 	assert.Equal(t, creds.Username, claims.Subject)
-	assert.Equal(t, "qredo", claims.Issuer)
-	assert.Equal(t, "qredo", claims.Audience)
+	assert.Equal(t, "foo-issuer", claims.Issuer)
+	assert.Equal(t, "foo-audience", claims.Audience)
 	assert.True(t, time.Now().Before(time.Unix(claims.ExpiresAt, 0)))
 }
 
@@ -104,8 +104,8 @@ func TestDefaultService_VerifyToken(t *testing.T) {
 		claims := Claims{
 			StandardClaims: jwt.StandardClaims{
 				Subject:   username,
-				Issuer:    "qredo",
-				Audience:  "qredo",
+				Issuer:    "foo",
+				Audience:  "foo-audience",
 				ExpiresAt: time.Now().Add(-1 * time.Hour).Unix(),
 			},
 		}
@@ -124,7 +124,7 @@ func TestDefaultService_VerifyToken(t *testing.T) {
 			StandardClaims: jwt.StandardClaims{
 				Subject:   username,
 				Issuer:    "invalid-issuer",
-				Audience:  "qredo",
+				Audience:  "foo-audience",
 				ExpiresAt: time.Now().Add(time.Hour).Unix(),
 			},
 		}
@@ -142,7 +142,7 @@ func TestDefaultService_VerifyToken(t *testing.T) {
 		claims := Claims{
 			StandardClaims: jwt.StandardClaims{
 				Subject:   username,
-				Audience:  "qredo",
+				Audience:  "foo-audience",
 				ExpiresAt: time.Now().Add(time.Hour).Unix(),
 			},
 		}
@@ -160,7 +160,7 @@ func TestDefaultService_VerifyToken(t *testing.T) {
 		claims := Claims{
 			StandardClaims: jwt.StandardClaims{
 				Subject:   username,
-				Issuer:    "qredo",
+				Issuer:    "foo-issuer",
 				Audience:  "invalid-audience",
 				ExpiresAt: time.Now().Add(time.Hour).Unix(),
 			},
@@ -179,7 +179,7 @@ func TestDefaultService_VerifyToken(t *testing.T) {
 		claims := Claims{
 			StandardClaims: jwt.StandardClaims{
 				Subject:   username,
-				Issuer:    "qredo",
+				Issuer:    "foo-issuer",
 				ExpiresAt: time.Now().Add(time.Hour).Unix(),
 			},
 		}
@@ -197,8 +197,8 @@ func TestDefaultService_VerifyToken(t *testing.T) {
 		claims := Claims{
 			StandardClaims: jwt.StandardClaims{
 				Subject:  username,
-				Issuer:   "qredo",
-				Audience: "qredo",
+				Issuer:   "foo-issuer",
+				Audience: "foo-audience",
 			},
 		}
 
